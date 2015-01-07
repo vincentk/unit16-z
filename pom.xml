@@ -144,4 +144,5 @@
 
 	<name>unit16-z</name>
 	<url>https://github.com/vincentk/unit16-z</url>
+	<description>A collection of utilities for representing and manipulating time series and such.</description>
 </project>
