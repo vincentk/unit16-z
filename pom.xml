@@ -6,6 +6,24 @@
 	<artifactId>unit16-z</artifactId>
 	<version>0.0.2-SNAPSHOT</version>
 
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>manual</distribution>
+		</license>
+	</licenses>
+
+
+	<developers>
+		<developer>
+			<name>Vincent Kraeutler</name>
+			<email>vincent.kraeutler@gmail.com</email>
+			<organization>github</organization>
+			<organizationUrl>https://github.com/vincentk</organizationUrl>
+		</developer>
+	</developers>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -124,4 +142,13 @@
 		</profile>
 	</profiles>
 
+	<name>unit16-z</name>
+	<url>https://github.com/vincentk/unit16-z</url>
+	<description>A collection of utilities for representing and manipulating time series and such.</description>
+	<issueManagement>
+		<url>https://github.com/vincentk/unit16-z/issues</url>
+	</issueManagement>
+	<ciManagement>
+		<url>https://travis-ci.org/vincentk/unit16-z/builds/</url>
+	</ciManagement>
 </project>
