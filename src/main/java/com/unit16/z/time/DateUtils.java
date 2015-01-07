@@ -20,9 +20,9 @@ public class DateUtils {
 		}};
 	
 	/**
-	 * @param start
-	 * @param end
-	 * @return all days between start (inclusive) and end (inclusive) -- empty sequence if start is after end.
+	 * @param start of sequence (inclusive)
+	 * @param end of sequence (inclusive)
+	 * @return all days between start and end -- empty sequence if start is after end.
 	 */
 	public static Sequence<LocalDate> period(final LocalDate start, final LocalDate end)
 	{

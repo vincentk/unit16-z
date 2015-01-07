@@ -10,6 +10,9 @@ public final class Rounding {
 	 * 
 	 * For all v:
 	 * -symmetric(v) == symmetric(-v)
+	 * 
+	 * @param v input value
+	 * @return rounded value
 	 */
 	public static long symmetric(double v)
 	{

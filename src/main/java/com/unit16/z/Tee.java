@@ -9,10 +9,6 @@ public interface Tee<A, B, C> {
 
 	/**
 	 * Composition rules for {@link Tee}, as a presumably hip "fluid builder".
-	 * 
-	 * @param <A>
-	 * @param <B>
-	 * @param <C>
 	 */
 	static abstract class DSL<A, B, C>
 	implements Tee<A, B, C>

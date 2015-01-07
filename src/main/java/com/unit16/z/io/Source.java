@@ -12,7 +12,8 @@ public interface Source<A> extends Closeable {
 	/**
 	 * @return true exactly if the source is open (has not been closed -- {@link #close()})
 	 * and we expect to be able to read another item from it.
-	 * @throws IOException
+	 * 
+	 * @throws IOException .
 	 */
 	public boolean hasNext() throws IOException;
 

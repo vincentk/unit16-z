@@ -9,7 +9,6 @@ import com.google.common.collect.UnmodifiableIterator;
 
 /**
  * Like {@link Iterator}, but immutable (and hence, simpler).
- * @param <A>
  */
 public abstract class Sequence<A> implements Iterable<A> {
 	

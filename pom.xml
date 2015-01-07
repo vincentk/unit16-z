@@ -43,10 +43,21 @@
 		<url>git@github.com:vincentk/unit16-z.git</url>
 	</scm>
 
-
+	<!-- See http://central.sonatype.org/pages/apache-maven.html -->
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
 
 	<profiles>
 		<profile>
+			<!-- See http://central.sonatype.org/pages/apache-maven.html -->
 			<id>release</id>
 			<build>
 				<plugins>
@@ -63,7 +74,6 @@
 							<autoReleaseAfterClose>true</autoReleaseAfterClose>
 						</configuration>
 					</plugin>
-
 
 					<!-- GPG signing required for publishing via sonatype OSS hosting -->
 					<plugin>
