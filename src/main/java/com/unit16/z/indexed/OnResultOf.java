@@ -1,8 +1,8 @@
 package com.unit16.z.indexed;
 
 import java.util.Iterator;
+import java.util.function.Function;
 
-import com.google.common.base.Function;
 import com.google.common.collect.Iterators;
 
 final class OnResultOf<A, B>
@@ -26,5 +26,5 @@ extends DSL<B>
 	public int size() { return _a.size(); }
 
 	@Override
-	public Iterator<B> iterator() { return Iterators.transform(_a.iterator(), _f); }
+	public Iterator<B> iterator() { return Iterators.transform(_a.iterator(), x -> _f.apply(x)); }
 }

@@ -3,9 +3,9 @@ package com.unit16.z.indexed;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
-import com.google.common.base.Function;
-import com.google.common.base.Predicate;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
 import com.google.common.collect.UnmodifiableIterator;
@@ -109,7 +109,7 @@ implements Indexed<B>, Iterable<B>
 	{
 		if (size() > 0)
 		{
-			final Iterator<B> i = Iterators.filter(this.iterator(), p);
+			final Iterator<B> i = Iterators.filter(this.iterator(), x -> p.test(x));
 			if (i.hasNext())
 			{
 				return new ListBacked<>(Lists.newArrayList(i));

@@ -1,8 +1,7 @@
 package com.unit16.z.function;
 
 import java.util.HashMap;
-
-import com.google.common.base.Function;
+import java.util.function.Function;
 
 public final class HashCache<X, Y> 
 implements Function<X, Y>

@@ -4,8 +4,8 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.TimeZone;
+import java.util.function.Predicate;
 
-import com.google.common.base.Predicate;
 import com.unit16.z.Sequence;
 
 public class DateUtils {

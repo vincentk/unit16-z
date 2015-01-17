@@ -1,7 +1,7 @@
 package com.unit16.z.time;
 
-import com.google.common.base.Function;
-import com.google.common.base.Supplier;
+import java.util.function.Function;
+import java.util.function.Supplier;
 
 public interface TimedI<P> extends Supplier<P>, GMTMicros {
 

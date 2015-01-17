@@ -1,9 +1,9 @@
 package com.unit16.z;
 
 import java.util.Iterator;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
-import com.google.common.base.Function;
-import com.google.common.base.Predicate;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.UnmodifiableIterator;
 
@@ -50,12 +50,12 @@ public abstract class Sequence<A> implements Iterable<A> {
 	
 	public final <D> Sequence<D> onResultOf(Function<A, D> f)
 	{
-		return fromIterator(Iterators.transform(iterator(), f));
+		return fromIterator(Iterators.transform(iterator(), x -> f.apply(x)));
 	}
 	
 	public final Sequence<A> filter(Predicate<A> p)
 	{
-		return fromIterator(Iterators.filter(iterator(), p));
+		return fromIterator(Iterators.filter(iterator(), x -> p.test(x)));
 	}
 	
 	@Override

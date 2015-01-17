@@ -1,6 +1,6 @@
 package com.unit16.z;
 
-import com.google.common.base.Function;
+import java.util.function.Function;
 
 public interface UniformFunction<T> 
 extends Function<T, T>
