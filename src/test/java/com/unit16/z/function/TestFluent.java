@@ -1,12 +1,12 @@
 package com.unit16.z.function;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.util.function.Consumer;
 
 import org.junit.Test;
-
-import com.google.common.base.Functions;
 
 public class TestFluent {
 
