@@ -39,7 +39,8 @@ public class DateUtils {
 	
 	public static LocalDateTime fromMicros(GMTMicros micros)
 	{
-	    return LocalDateTime.ofInstant(Instant.ofEpochMilli(micros.gmtMicros() / 1000), UTC.toZoneId());
+	    final Instant ofEpochMilli = Instant.ofEpochMilli(micros.gmtMicros() / 1000);
+        return LocalDateTime.ofInstant(ofEpochMilli, UTC.toZoneId());
 	}
 	
 	private static final TimeZone UTC = TimeZone.getTimeZone("UTC");
