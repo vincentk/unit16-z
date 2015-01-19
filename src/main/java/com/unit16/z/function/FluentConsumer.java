@@ -6,11 +6,11 @@ import java.util.function.Predicate;
 
 public class FluentConsumer<T> implements Consumer<T> {
 
-    private final Consumer<T> wrapped;
+    private final Consumer<? super T> wrapped;
 
-    private FluentConsumer(Consumer<T> w) { wrapped = w; }
+    private FluentConsumer(Consumer<? super T> w) { wrapped = w; }
 
-    public static <P> FluentConsumer<P> on(Consumer<P> w) { return new FluentConsumer<P>(w); }
+    public static <P> FluentConsumer<P> on(Consumer<? super P> w) { return new FluentConsumer<P>(w); }
 
     @Override
     public final void accept(T t) {
@@ -28,7 +28,7 @@ public class FluentConsumer<T> implements Consumer<T> {
     
     private static final class Filters<S> extends FluentConsumer<S>
     {
-        private Filters(Predicate<S> pred, Consumer<S> ct)
+        private Filters(Predicate<? super S> pred, Consumer<? super S> ct)
         {
             super(new Consumer<S>(){
                 @Override
@@ -40,7 +40,7 @@ public class FluentConsumer<T> implements Consumer<T> {
     
     private static final class MapsTo<S, T> extends FluentConsumer<S>
     {
-        private MapsTo(Function<S, T> map, Consumer<T> ct)
+        private MapsTo(Function<? super S, ? extends T> map, Consumer<? super T> ct)
         {
             super(new Consumer<S>(){
 
