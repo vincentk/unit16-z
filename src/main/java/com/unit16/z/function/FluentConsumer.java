@@ -21,7 +21,7 @@ public class FluentConsumer<T> implements Consumer<T> {
         return new Filters<>(pred, wrapped);
     }
 
-    public final <S> FluentConsumer<S> map(final Function<S, T> func)
+    public final <S> FluentConsumer<S> map(final Function<? super S, ? extends T> func)
     {
         return new MapsTo<>(func, wrapped);
     }
