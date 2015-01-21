@@ -10,7 +10,7 @@ import com.unit16.z.Sequence;
 
 public class DateUtils {
 
-	public static Predicate<LocalDate> WEEKDAY = day -> day.getDayOfWeek().getValue() < 6;
+	public static final Predicate<LocalDate> WEEKDAY = day -> day.getDayOfWeek().getValue() < 6;
 	
 	/**
 	 * @param start of sequence (inclusive)
