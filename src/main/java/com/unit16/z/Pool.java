@@ -20,7 +20,7 @@ public abstract class Pool<D> {
 	}
 	
 	/**
-	 * Draw an element from the pool, creating one if the pool is empty.
+	 * @return an element from the pool, creating one if the pool is empty.
 	 */
 	public final D draw()
 	{
@@ -36,6 +36,7 @@ public abstract class Pool<D> {
 	
 	/**
 	 * Factory method for new objects.
+	 * @return a newly instantiated object
 	 */
 	protected abstract D create();
 }
