@@ -87,11 +87,6 @@ public interface Pair<A, B> {
 				};
 			}
 			
-			public final <F> Const.Uniform<F> functor(Function<? super E, F> f)
-			{
-				return pair(f.apply(fst()), f.apply(snd()));
-			}
-			
 			@Override
 			public String toString()
 			{
