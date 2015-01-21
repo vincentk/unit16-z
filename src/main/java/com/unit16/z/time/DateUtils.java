@@ -43,5 +43,10 @@ public class DateUtils {
         return LocalDateTime.ofInstant(ofEpochMilli, UTC.toZoneId());
 	}
 	
+	public static GMTMicros.Const midnightUTCMicros(LocalDate date)
+	{
+	    return new GMTMicros.Const(date.atStartOfDay(UTC.toZoneId()).toEpochSecond() * 1000 * 1000);
+	}
+	
 	private static final TimeZone UTC = TimeZone.getTimeZone("UTC");
 }
