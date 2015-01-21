@@ -41,18 +41,19 @@ public class DateUtils {
     public static LocalDateTime fromMicros(GMTMicros micros)
     {
         final Instant ofEpochMilli = Instant.ofEpochMilli(micros.gmtMicros() / 1000);
-        return LocalDateTime.ofInstant(ofEpochMilli, UTC);
+        return LocalDateTime.ofInstant(ofEpochMilli, UTC_ID);
     }
 
     public static GMTMicros.Const UTCMicros(LocalDateTime date)
     {
-        return new GMTMicros.Const(date.atZone(UTC).toEpochSecond() * 1000 * 1000);
+        return new GMTMicros.Const(date.atZone(UTC_ID).toEpochSecond() * 1000 * 1000);
     }
 
     public static GMTMicros.Const midnightUTCMicros(LocalDate date)
     {
-        return new GMTMicros.Const(date.atStartOfDay(UTC).toEpochSecond() * 1000 * 1000);
+        return new GMTMicros.Const(date.atStartOfDay(UTC_ID).toEpochSecond() * 1000 * 1000);
     }
 
-    private static final ZoneId UTC = TimeZone.getTimeZone("UTC").toZoneId();
+    public static final TimeZone UTC = TimeZone.getTimeZone("UTC");
+    public static final ZoneId UTC_ID = UTC.toZoneId();
 }
