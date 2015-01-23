@@ -1,8 +1,8 @@
 package com.unit16.z.time;
 
 import java.io.IOException;
+import java.util.function.Consumer;
 
-import com.unit16.z.Continuation;
 import com.unit16.z.io.Source;
 
 /**
@@ -18,12 +18,12 @@ public interface MaybeEmpty extends GMTMicros
     implements MaybeEmpty
     {
         private final Source<TimedI<? extends E>> src_;
-        private final Continuation<? super E> dst_;
+        private final Consumer<? super E> dst_;
         
         private long micros_ = 0l;
         private TimedI<? extends E> current_ = null;
         
-        public FromSource(Source<TimedI<? extends E>> src, Continuation<? super E> dst)
+        public FromSource(Source<TimedI<? extends E>> src, Consumer<? super E> dst)
         {
             src_ = src;
             dst_ = dst;
@@ -39,7 +39,7 @@ public interface MaybeEmpty extends GMTMicros
         @Override
         public void advance() {
             final E e = current_.get();
-            dst_.handle(e);
+            dst_.accept(e);
             readNext();
         }
         
