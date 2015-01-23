@@ -11,7 +11,7 @@ public interface ToDouble<A> {
 		private final ToDouble<B> td;
 		public DSL(ToDouble<B> td_) { td = td_; }
 		
-		public final double[] from(Indexed<B> idx)
+		public final double[] from(Indexed<? extends B> idx)
 		{
 			final double[] r = new double[idx.size()];
 			into(idx, r);
