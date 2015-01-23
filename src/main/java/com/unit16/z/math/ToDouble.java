@@ -18,20 +18,20 @@ public interface ToDouble<A> {
 			return r;
 		}
 		
-		public final void into(Indexed<B> idx, double[] dst)
+		public void into(Indexed<? extends B> idx, double[] dst)
 		{
 			final int n = idx.size();
 			for (int i = 0; i < n; i++) { dst[i] = td.apply(idx.get(i)); }
 		}
 		
-		public final double min(Iterable<B> src)
+		public double min(Iterable<? extends B> src)
 		{
 			double m = Double.MAX_VALUE;
 			for (B b : src) { m = Math.min(m, td.apply(b)); }
 			return m;
 		}
 		
-		public final double max(Iterable<B> src)
+		public double max(Iterable<? extends B> src)
 		{
 			double m = Double.MIN_VALUE;
 			for (B b : src) { m = Math.max(m, td.apply(b)); }
