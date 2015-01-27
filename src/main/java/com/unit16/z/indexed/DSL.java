@@ -34,6 +34,8 @@ implements Indexed<B>, Iterable<B>
 		@Override public int size() { return _list.size(); }	
 		
 		@Override public Iterator<C> iterator() { return _list.iterator(); }
+		
+		@Override public String toString() { return getClass().getSimpleName() + ": " + _list.toString(); }
 	}
 
 	private static final class IndexedBacked<C>
