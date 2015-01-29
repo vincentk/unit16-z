@@ -17,7 +17,7 @@ public class FluentConsumer<T> implements Consumer<T> {
         wrapped.accept(t);
     }
 
-    public final FluentConsumer<T> filter(final Predicate<T> pred) {
+    public final FluentConsumer<T> filter(final Predicate<? super T> pred) {
         return new Filters<>(pred, wrapped);
     }
 
