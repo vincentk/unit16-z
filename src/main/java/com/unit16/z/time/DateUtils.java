@@ -3,6 +3,7 @@ package com.unit16.z.time;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.ZoneId;
 import java.util.TimeZone;
 import java.util.function.Predicate;
@@ -36,6 +37,20 @@ public class DateUtils {
             public boolean hasNext() {
                 return !today.isAfter(end);
             }};
+    }
+
+    /**
+     * @param now 
+     * @param localTime
+     * @return a UTC microsecond representation of the supplied local time
+     */
+    public static GMTMicros ofLocalTime(GMTMicros now, LocalTime localTime)
+    {
+        final LocalDateTime dt = LocalDateTime.of(
+                LocalDate.from(fromMicros(now)), 
+                localTime);
+
+        return UTCMicros(dt);
     }
 
     public static LocalDateTime fromMicros(GMTMicros micros)
