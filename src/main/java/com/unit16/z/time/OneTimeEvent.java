@@ -22,5 +22,5 @@ public final class OneTimeEvent implements MaybeEmpty {
     public boolean hasNext() { return !ran; }
 
     @Override
-    public void advance() { what_.run(); }
+    public void advance() { ran = true; what_.run(); }
 }
