@@ -17,7 +17,7 @@ public final class TestIntervalEvent {
         for (int i = 0; i < 10; i++)
         {
             assertTrue(ie.hasNext());
-            assertEquals(i + 1, ie.gmtMicros());
+            assertEquals(i + 1, ie.utcMicros());
             ie.advance();
         }
     }

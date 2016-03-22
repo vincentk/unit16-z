@@ -55,7 +55,7 @@ public class DateUtils {
 
     public static LocalDateTime fromMicros(UTCMicros micros)
     {
-        final Instant ofEpochMilli = Instant.ofEpochMilli(micros.gmtMicros() / 1000);
+        final Instant ofEpochMilli = Instant.ofEpochMilli(micros.utcMicros() / 1000);
         return LocalDateTime.ofInstant(ofEpochMilli, UTC_ID);
     }
 

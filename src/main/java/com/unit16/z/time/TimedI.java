@@ -27,7 +27,7 @@ public interface TimedI<P> extends Supplier<P>, UTCMicros {
 		}
 
 		@Override
-		public final long gmtMicros() { return micros_; }
+		public final long utcMicros() { return micros_; }
 
 		@Override
 		public final Q get() { return p_; }
@@ -39,7 +39,7 @@ public interface TimedI<P> extends Supplier<P>, UTCMicros {
 		public Q p_;
 
 		@Override
-		public final long gmtMicros() { return micros_; }
+		public final long utcMicros() { return micros_; }
 
 		@Override
 		public final Q get() { return p_; }

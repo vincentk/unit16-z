@@ -15,13 +15,13 @@ public final class IntervalEvent implements MaybeEmpty {
     {
         assert interval > 0;
         interval_ = interval;
-        next_ = start.gmtMicros() + interval_;
-        end_ = end.gmtMicros();
+        next_ = start.utcMicros() + interval_;
+        end_ = end.utcMicros();
         what_ = what;
     }
 
     @Override
-    public long gmtMicros() { return next_; }
+    public long utcMicros() { return next_; }
 
     @Override
     public boolean hasNext() { return next_ <= end_; }

@@ -11,12 +11,12 @@ public final class OneTimeEvent implements MaybeEmpty {
     
     public OneTimeEvent(UTCMicros when, Runnable what)
     {
-        when_ = when.gmtMicros();
+        when_ = when.utcMicros();
         what_ = what;
     }
 
     @Override
-    public long gmtMicros() { return when_; }
+    public long utcMicros() { return when_; }
 
     @Override
     public boolean hasNext() { return !ran; }

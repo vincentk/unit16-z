@@ -31,7 +31,7 @@ public interface MaybeEmpty extends UTCMicros
         }
 
         @Override
-        public long gmtMicros() { return micros_; }
+        public long utcMicros() { return micros_; }
 
         @Override
         public boolean hasNext() {  return current_ != null; }
@@ -49,9 +49,9 @@ public interface MaybeEmpty extends UTCMicros
                 if (src_.hasNext())
                 {
                     final TimedI<? extends E> c1 = src_.next();
-                    assert c1.gmtMicros() >= micros_;
+                    assert c1.utcMicros() >= micros_;
                     current_ = c1;
-                    micros_ = current_.gmtMicros();
+                    micros_ = current_.utcMicros();
                 }
                 else
                 {
@@ -68,7 +68,7 @@ public interface MaybeEmpty extends UTCMicros
         @Override
         public String toString()
         {
-            return super.toString() + "{" + src_ + "->" + dst_ + "@" + (current_ != null ? gmtMicros() : 0l) + "}";
+            return super.toString() + "{" + src_ + "->" + dst_ + "@" + (current_ != null ? utcMicros() : 0l) + "}";
         }
     }
     
@@ -90,7 +90,7 @@ public interface MaybeEmpty extends UTCMicros
             recomputeNext();
         }
 
-        @Override public long gmtMicros() { return micros_; }
+        @Override public long utcMicros() { return micros_; }
 
         @Override public boolean hasNext() { return _next != null; }
 
@@ -108,7 +108,7 @@ public interface MaybeEmpty extends UTCMicros
             }
             else if (f && s)
             {
-                if (_fst.gmtMicros() <= _snd.gmtMicros())
+                if (_fst.utcMicros() <= _snd.utcMicros())
                 {
                     _next = _fst;
                 }
@@ -126,7 +126,7 @@ public interface MaybeEmpty extends UTCMicros
                 _next = _snd;
             }
             
-            final long m2 = _next.gmtMicros();
+            final long m2 = _next.utcMicros();
 
             assert m2 >= micros_ : _fst + " " + _snd + " -> " + _next;
             micros_ = m2;
