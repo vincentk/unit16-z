@@ -8,7 +8,7 @@ import com.unit16.z.io.Source;
 /**
  * A possibly empty sequence of time-stamped events.
  */
-public interface MaybeEmpty extends GMTMicros
+public interface MaybeEmpty extends UTCMicros
 {
     public boolean hasNext();
     

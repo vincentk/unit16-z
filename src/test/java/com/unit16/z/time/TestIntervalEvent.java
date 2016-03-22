@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import com.unit16.z.time.GMTMicros.Const;
+import com.unit16.z.time.UTCMicros.Const;
 
 @SuppressWarnings("static-method")
 public final class TestIntervalEvent {

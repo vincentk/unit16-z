@@ -44,7 +44,7 @@ public class DateUtils {
      * @param localTime
      * @return a UTC microsecond representation of the supplied local time
      */
-    public static GMTMicros ofLocalTime(GMTMicros now, LocalTime localTime)
+    public static UTCMicros ofLocalTime(UTCMicros now, LocalTime localTime)
     {
         final LocalDateTime dt = LocalDateTime.of(
                 LocalDate.from(fromMicros(now)), 
@@ -53,20 +53,20 @@ public class DateUtils {
         return UTCMicros(dt);
     }
 
-    public static LocalDateTime fromMicros(GMTMicros micros)
+    public static LocalDateTime fromMicros(UTCMicros micros)
     {
         final Instant ofEpochMilli = Instant.ofEpochMilli(micros.gmtMicros() / 1000);
         return LocalDateTime.ofInstant(ofEpochMilli, UTC_ID);
     }
 
-    public static GMTMicros.Const UTCMicros(LocalDateTime date)
+    public static UTCMicros.Const UTCMicros(LocalDateTime date)
     {
-        return new GMTMicros.Const(date.atZone(UTC_ID).toEpochSecond() * 1000 * 1000);
+        return new UTCMicros.Const(date.atZone(UTC_ID).toEpochSecond() * 1000 * 1000);
     }
 
-    public static GMTMicros.Const midnightUTCMicros(LocalDate date)
+    public static UTCMicros.Const midnightUTCMicros(LocalDate date)
     {
-        return new GMTMicros.Const(date.atStartOfDay(UTC_ID).toEpochSecond() * 1000 * 1000);
+        return new UTCMicros.Const(date.atStartOfDay(UTC_ID).toEpochSecond() * 1000 * 1000);
     }
 
     public static final TimeZone UTC = TimeZone.getTimeZone("UTC");

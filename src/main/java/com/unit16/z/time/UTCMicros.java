@@ -2,7 +2,7 @@ package com.unit16.z.time;
 
 import java.util.Comparator;
 
-public interface GMTMicros {
+public interface UTCMicros {
 
     public long gmtMicros();
 
@@ -15,7 +15,7 @@ public interface GMTMicros {
         public long gmtMicros() { return ts_; }
     }
 
-    static abstract class NicelyFormatted implements GMTMicros
+    static abstract class NicelyFormatted implements UTCMicros
     {
         @Override
         public String toString()
@@ -25,7 +25,7 @@ public interface GMTMicros {
         }
     }
 
-    public static final Comparator<GMTMicros> ORDERING = (GMTMicros o1, GMTMicros o2) -> {
+    public static final Comparator<UTCMicros> ORDERING = (UTCMicros o1, UTCMicros o2) -> {
         final long dl = o1.gmtMicros() - o2.gmtMicros();
         return Long.signum(dl);
     };

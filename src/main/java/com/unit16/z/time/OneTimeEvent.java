@@ -9,7 +9,7 @@ public final class OneTimeEvent implements MaybeEmpty {
     private final long when_;
     private final Runnable what_;
     
-    public OneTimeEvent(GMTMicros when, Runnable what)
+    public OneTimeEvent(UTCMicros when, Runnable what)
     {
         when_ = when.gmtMicros();
         what_ = what;

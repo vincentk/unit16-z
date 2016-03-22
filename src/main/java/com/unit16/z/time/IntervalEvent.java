@@ -11,7 +11,7 @@ public final class IntervalEvent implements MaybeEmpty {
     
     private long next_;
     
-    public IntervalEvent(GMTMicros start, long interval, GMTMicros end, Runnable what)
+    public IntervalEvent(UTCMicros start, long interval, UTCMicros end, Runnable what)
     {
         assert interval > 0;
         interval_ = interval;

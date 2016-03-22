@@ -2,10 +2,10 @@ package com.unit16.z.time;
 
 import java.util.function.Supplier;
 
-public interface TimedI<P> extends Supplier<P>, GMTMicros {
+public interface TimedI<P> extends Supplier<P>, UTCMicros {
 
 	abstract static class Formatted<Q>
-	extends GMTMicros.NicelyFormatted
+	extends UTCMicros.NicelyFormatted
 	implements
 	TimedI<Q>
 	{
